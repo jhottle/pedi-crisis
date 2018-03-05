@@ -1,0 +1,446 @@
+/* Add custom fonts to the app */
+@font-face {
+    font-family: 'roboto-bold';
+    src: url('fonts/roboto-bold.woff2') format('woff2'),
+         url('fonts/roboto-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-black';
+    src: url('fonts/roboto-black.woff2') format('woff2'),
+         url('fonts/roboto-black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-light';
+    src: url('fonts/roboto-light.woff2') format('woff2'),
+         url('fonts/roboto-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('fonts/roboto-regular.woff2') format('woff2'),
+         url('fonts/roboto-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('fonts/roboto-thin.woff2') format('woff2'),
+         url('fonts/roboto-thin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-medium';
+    src: url('fonts/roboto-medium.woff2') format('woff2'),
+         url('fonts/roboto-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotocondensed-regular';
+    src: url('fonts/robotocondensed-regular.woff') format('woff'),
+         url('fonts/robotocondensed-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotocondensed-bold';
+    src: url('fonts/robotocondensed-bold.woff2') format('woff2'),
+         url('fonts/robotocondensed-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotocondensed-light';
+    src: url('fonts/robotocondensed-light.woff2') format('woff2'),
+         url('fonts/robotocondensed-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Prevent focus outlines. See https://stackoverflow.com/a/17772980/772086 */
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    -webkit-tap-highlight-color: transparent;
+    outline: none !important;
+}
+
+html {
+    /* Center the body */
+    margin:    0 auto;
+    max-width: 1000px;
+    color: #666666;
+    /* font-size: 1.2rem; */
+
+    /* Force the Content div to expand to occupy the remainder of the screen. */
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+
+    background-color: #fafafa;
+    background-image: repeating-linear-gradient(-45deg,
+    transparent 1px,
+    transparent 1px,
+    #fafafa 3px,
+    #eee 6px);
+}
+
+body {
+
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout: none;
+
+    /* prevent webkit from resizing text to fit */
+    -webkit-text-size-adjust: none;
+
+    /* prevent copy paste */
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    /* Keep the background color the same as the header for iPhoneX */
+    background-color:#efefef;
+
+    /*font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
+    font-family: 'roboto-regular', sans-serif;
+
+    height: 100%;
+    /* height: -webkit-fill-available; */
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+
+    /* This fixes an issue where iOS will shift the screen up when the keyboard is dismissed. */
+    /* position: fixed; */
+}
+
+strong {
+    font-family: 'roboto-black', sans-serif;
+}
+
+#nav {
+    /* This is needed to prevent text from being visible when it scrolls behind the header. */
+    background-color: #f4f4f4;
+
+    border-bottom: 1px solid #777;
+
+    position: fixed;
+    width: inherit;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    max-width: 1000px; /* This matches the same rule on html */
+}
+
+#content {
+    flex-grow: 1;
+    background-color: #efefef;
+}
+
+#title {
+    font-size: 1rem;
+}
+
+#header {
+  font-family: 'robotocondensed-bold', sans-serif;
+  font-size: 1.2rem;
+}
+
+.page {
+    /* Make the page *look* like a page */
+    background-color: #f7f7f7;
+    padding: 1em;
+    margin: 1em;
+    /* Let the content breath! */
+    line-height: 2;
+}
+
+[data-uri] {
+    cursor: pointer;
+}
+
+/* These two rules pad the left and right side of the nav buttons. */
+#nav .button-group {
+    padding-left: 1rem;
+}
+
+#nav .button-container {
+    padding-right: 1rem;
+}
+
+/* button-group is the parent of button-container */
+.button-group {
+    display: flex;
+    padding-bottom: 0.5rem;
+}
+
+/* Use `button-container` instead of a straight `button`.
+ * Buttons don't stretch to the proper width with `flex`,
+ * but they stretch just fine to fill a containing element.
+ */
+.button-container {
+    flex-grow: 1;
+    padding-right: 1rem;
+}
+
+/* For a non-nav button-container, don't pad the far left or far right side (the containing .page already has padding) */
+.button-container:last-child {
+    padding-right: 0rem;
+}
+
+button {
+	background-color:#ededed;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	font-family: 'roboto-medium', sans-serif;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    height: 2rem;
+}
+button:hover {
+	background-color:#dfdfdf;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+input {
+    font-size: 1em;
+}
+
+/* Buttons are styled very lightly so that the native styles may be applied. */
+button.emphasis {
+    font-family: 'roboto-black', sans-serif;
+    /* This works on Chrome but not iOS WebView. */
+    box-shadow: 0 0 4px #777;
+    border-color: #666;
+}
+
+.button-container button {
+    width: 100%;
+}
+
+.event-row {
+    padding-bottom: 1em;
+}
+
+.event-number {
+    display: inline-block;
+    padding: 0.4em 1.15em;
+    font-family: 'roboto-black', sans-serif;
+    border-radius: 4px;
+}
+
+.event-title {
+    border-radius: 4px;
+    font-family: 'roboto-bold', sans-serif;
+    padding: .5em;
+}
+
+/* These weight-related CSS classes will hide or display select items. */
+body.has-weight .has-weight {
+    display: unset;
+}
+
+body.has-weight li.has-weight {
+    display: list-item;
+}
+
+body.has-weight .no-weight {
+    display: none;
+}
+
+body.no-weight .no-weight {
+    display: unset;
+}
+
+body.no-weight li.no-weight {
+    display: list-item;
+}
+
+body.no-weight .has-weight {
+    display: none;
+}
+
+.per-kg-weight {
+    color: #aaa;
+    font-size: 0.8em;
+}
+
+/* CSS for the back button */
+
+/* The default for all platforms: the back button is not displayed. */
+#back-button {
+    display: none;
+}
+
+/* The default for iOS: the back button occupies space, but it is invisible. */
+body.display-virtual-back-button #back-button {
+    display: inherit;
+    opacity: 0;
+}
+
+/* For iOS: the back button appears when there is history. */
+body.display-virtual-back-button.has-history #back-button {
+    animation-name: fade-in;
+    -webkit-animation-name: fade-in;
+
+    animation-duration: 0.2s;
+	  -webkit-animation-duration: 0.2s;
+
+	  animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    opacity: 1;
+}
+
+/* Decrease the size of padding-left to fit more horizontally on a (relatively) small mobile screen. */
+ul {
+    /* Default for `ul` is 40px in Chrome. */
+    padding-left: 20px;
+    -webkit-padding-start: 20px;
+}
+
+li li {
+  list-style-type: none;
+}
+
+li li:before {
+  content: "-";
+  padding-right: 5px;
+}
+
+.bg-red {
+    background-color: #f1c7d1;
+}
+
+button.bg-red:hover, button.bg-red.emphasis {
+    background-color: #ecb3c0;
+}
+
+button.bg-red.emphasis {
+  border-color: #f1053a;
+  box-shadow: 0 0 4px #f1053a;
+}
+
+.bg-orange {
+    background-color: #f1d2c7;
+}
+
+button.bg-orange:hover, button.bg-orange.emphasis {
+    background-color: #ecc2b3;
+}
+
+button.bg-orange.emphasis {
+  border-color: #f34705;
+  box-shadow: 0 0 4px #f34705;
+}
+
+.bg-yellow {
+    background-color: #FCF8E4;
+}
+
+button.bg-yellow:hover, button.bg-yellow.emphasis {
+    background-color: #f9f0c6;
+}
+
+.bg-green {
+    background-color: #e2f6d6;
+}
+
+button.bg-green:hover, button.bg-green.emphasis {
+    background-color: #d3f1c1;
+}
+
+button.bg-green.emphasis {
+  border-color: #4ac109;
+  box-shadow: 0 0 4px #4ac109;
+}
+
+.bg-blue {
+    background-color: #c7e6f1;
+}
+
+button.bg-blue:hover, button.bg-blue.emphasis {
+    background-color: #b3ddec;
+}
+
+button.bg-blue.emphasis {
+  border-color: #08a0d6;
+  box-shadow: 0 0 4px #08a0d6;
+}
+
+.bg-purple {
+    background-color: #c7d1f1;
+}
+
+button.bg-purple:hover, button.bg-purple.emphasis {
+    background-color: #b3c0ec;
+}
+
+button.bg-purple.emphasis {
+  border-color: #0837da;
+  box-shadow: 0 0 4px #0837da;
+}
+
+.bg-violet {
+    background-color: #d2c7f1;
+}
+
+button.bg-violet:hover, button.bg-violet.emphasis {
+    background-color: #c2b3ec;
+}
+
+button.bg-violet.emphasis {
+  border-color: #4007ea;
+  box-shadow: 0 0 4px #4007ea;
+}
+
+.uri {
+    color: #33aa33;
+    font-family: 'roboto-bold', sans-serif;
+}
+
+/* Telephone numbers */
+a {
+  color: #33aa33;
+  font-family: 'roboto-bold', sans-serif;
+  text-decoration: none;
+}
+
+/* Styling for aside boxes on page */
+.subhet {
+  font-family: 'roboto-bold', sans-serif;
+}
+
+aside {
+  border-radius: px;
+  padding: .5em;
+}
+
+aside ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.attn {
+    padding: 1rem;
+    padding-left: 2rem;
+}
